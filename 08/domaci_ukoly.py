@@ -1,10 +1,17 @@
 ############ ukol 0 ##################
+# def mocniny(n):
+#     seznam = [];
+#     for i in range(n):
+#         seznam.append((i+1,(i+1)**2))
+#     return dict(seznam)
+
 def mocniny(n):
-    seznam = [];
+    seznam = {};
     for i in range(n):
-        seznam.append((i+1,(i+1)**2))
-    return dict(seznam)
-#
+        seznam[i+1] = (i+1)**2
+    return seznam
+
+
 # print(mocniny(4))
 
 ############ ukol 1 ##################
@@ -26,14 +33,22 @@ def soucet_klicu_a_hodnot(slovnik):
 # print(soucet_klicu_a_hodnot(mocniny(4)))
 
 ############ ukol 3 ##################
+# def pocet_znaku(retezec):
+#     seznam_znaku = list(retezec)
+#     pocty_znaku = {}
+#     for znak in seznam_znaku:
+#         pocty_znaku.setdefault(znak, seznam_znaku.count(znak))
+#     return pocty_znaku
+
 def pocet_znaku(retezec):
-    seznam_znaku = list(retezec)
     pocty_znaku = {}
-    for znak in seznam_znaku:
-        pocty_znaku.setdefault(znak, seznam_znaku.count(znak))
+    for znak in retezec:
+        if znak in pocty_znaku.keys():
+            pocty_znaku[znak] = pocty_znaku[znak]+1
+        else: pocty_znaku[znak] = 1
     return pocty_znaku
 
-# print(pocet_znaku('hello world'))
+print(pocet_znaku('hello world'))
 
 ############ ukol 4 ##################
 # import random
@@ -113,25 +128,25 @@ def nakresli_mapu(seznam_krizku):
 #     nakresli_mapu(seznam)
 
 ############ ukol 8 ##################
-def pohyb(souradnice, pohyb):
-    poloha = souradnice[-1]
-    if pohyb=='v':
-        nova_poloha = (poloha[0] + 1, poloha[1] + 0)
-    elif pohyb == 's':
-        nova_poloha = (poloha[0] + 0, poloha[1] - 1)
-    elif pohyb == 'j':
-        nova_poloha = (poloha[0] + 0, poloha[1] + 1)
-    elif pohyb == 'z':
-        nova_poloha = (poloha[0] -1, poloha[1] + 0)
-    souradnice.append(nova_poloha)
-    del souradnice[0]
-
-souradnice=[(0, 0), (1, 0), (2, 0)]
-pohyb(souradnice, 'v')
-print(souradnice)         # → [(1, 0), (2, 0), (3, 0)]
-pohyb(souradnice, 'v')
-print(souradnice)         # → [(2, 0), (3, 0), (4, 0)]
-pohyb(souradnice, 'j')
-print(souradnice)         # → [(3, 0), (4, 0), (4, 1)]
-pohyb(souradnice, 's')
-print(souradnice)         # → [(4, 0), (4, 1), (4, 0)]
+# def pohyb(souradnice, pohyb):
+#     poloha = souradnice[-1]
+#     if pohyb=='v':
+#         nova_poloha = (poloha[0] + 1, poloha[1] + 0)
+#     elif pohyb == 's':
+#         nova_poloha = (poloha[0] + 0, poloha[1] - 1)
+#     elif pohyb == 'j':
+#         nova_poloha = (poloha[0] + 0, poloha[1] + 1)
+#     elif pohyb == 'z':
+#         nova_poloha = (poloha[0] -1, poloha[1] + 0)
+#     souradnice.append(nova_poloha)
+#     del souradnice[0]
+#
+# souradnice=[(0, 0), (1, 0), (2, 0)]
+# pohyb(souradnice, 'v')
+# print(souradnice)         # → [(1, 0), (2, 0), (3, 0)]
+# pohyb(souradnice, 'v')
+# print(souradnice)         # → [(2, 0), (3, 0), (4, 0)]
+# pohyb(souradnice, 'j')
+# print(souradnice)         # → [(3, 0), (4, 0), (4, 1)]
+# pohyb(souradnice, 's')
+# print(souradnice)         # → [(4, 0), (4, 1), (4, 0)]
