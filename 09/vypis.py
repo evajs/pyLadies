@@ -1,3 +1,7 @@
+import sys
+sys.version
+sys.path
+
 # from louka import #--- nevi se z jakeho modulu prisla jaka promenna/funkce
 import louka
 # print(louka.barva)
