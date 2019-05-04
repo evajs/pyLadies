@@ -7,14 +7,14 @@ def piskvorky1d():
     hraje = 1
     while stav_hry == '-':
         if hraje==1:
-            pole = tah_hrace(pole)
+            pole = piskvorky.tah_hrace(pole)
             print(pole)
             hraje =2
         else:
-            pole = tah_pocitace(pole)
+            pole = ai.tah_pocitace(pole)
             print(pole)
             hraje =1
-        stav_hry = vyhodnot(pole)
+        stav_hry = piskvorky.vyhodnot(pole)
     if stav_hry =='x':
         print('Vyhrál jsi. Gratulujeme.')
     elif stav_hry =='o':

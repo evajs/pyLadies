@@ -8,7 +8,7 @@ def tah_hrace(pole):
     while pole[cislo_policka]!='-':
         print('Pole {} je obsazené'.format(cislo_policka))
         cislo_policka = int(input('Zadej číslo pole, kam chceš hrát (0-19): '))
-    return tah(pole,cislo_policka,'x')
+    return util.tah(pole,cislo_policka,'x')
 
 def vyhodnot(pole):
     konec = True

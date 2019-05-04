@@ -7,4 +7,4 @@ def tah_pocitace(pole):
     cislo_policka= randrange(0,20)
     while pole[cislo_policka]!='-':
         cislo_policka= randrange(0,20)
-    return  tah(pole,cislo_policka,'o')
+    return  util.tah(pole,cislo_policka,'o')
