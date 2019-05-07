@@ -1,3 +1,4 @@
+# hra.py
 import piskvorky
 import ai
 
