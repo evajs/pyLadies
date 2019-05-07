@@ -10,15 +10,16 @@ import util
 #         cislo_policka = int(input('Zadej číslo pole, kam chceš hrát (0-19): '))
 #     return util.tah(pole,cislo_policka,'x')
 
-def tah_hrace(pole, vstup):
+def over_vstup(pole, vstup):
     novy_vstup = False
     if vstup<0 or vstup>=20:
         novy_vstup = True
-        return '{} není v rozsahu hracího pole. Zadej číslo od 0 do 19.'.format(vstup),novy_vstup
-    if pole[cislo_policka]!='-':
-        print('Pole {} je obsazené'.format(cislo_policka))
-        cislo_policka = int(input('Zadej číslo pole, kam chceš hrát (0-19): '))
-    return util.tah(pole,cislo_policka,'x')
+        return '{} není v rozsahu hracího pole. Zadej číslo od 0 do 19.'.format(vstup), novy_vstup
+    elif pole[vstup]!='-':
+        novy_vstup = True
+        return 'Pole {} je obsazené.'.format(vstup), novy_vstup
+    else:
+        return '{} je dostupný tah.'.format(vstup), novy_vstup
 
 def vyhodnot(pole):
     konec = True
