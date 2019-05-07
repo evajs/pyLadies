@@ -1,4 +1,4 @@
-import util
+import ai
 
 # def tah_hrace(pole):
 #     cislo_policka = int(input('Zadej číslo pole, kam chceš hrát (0-19): '))
@@ -44,3 +44,12 @@ def vyhodnot(pole):
         return '!'
     else:
         return '-'
+
+def jak_to_dopadlo(stav_hry):
+    if stav_hry =='x':
+        hlaska='Vyhrál jsi. Gratulujeme.'
+    elif stav_hry =='o':
+        hlaska='Vyhrál počítač.'
+    elif stav_hry == '!':
+        hlaska='Remíza.'
+    return hlaska

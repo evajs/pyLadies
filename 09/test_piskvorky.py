@@ -1,6 +1,8 @@
 from piskvorky import vyhodnot
 from ai import tah_pocitace
 from util import tah
+from piskvorky import over_vstup
+from piskvorky import jak_to_dopadlo
 import pytest
 
 def test_vyhnoceni_krizky():
@@ -30,3 +32,20 @@ def test_tah_krizek():
 def test_tah_kolecko():
     assert tah('xx------o--x-oo-----', 2, 'o') == 'xxo-----o--x-oo-----'
 
+def test_over_vstup_obsazeno():
+    assert over_vstup('xx------o--x-oo-----', 1) == ('Pole 1 je obsazené.', True)
+
+def test_over_vstup_mimo():
+    assert over_vstup('xx------o--x-oo-----', -1) == ('-1 není v rozsahu hracího pole. Zadej číslo od 0 do 19.', True)
+
+def test_over_vstup_ok():
+    assert over_vstup('xx------o--x-oo-----', 2) == ('2 je dostupný tah.', False)
+
+def test_jak_to_dopadlo_krizky():
+    assert jak_to_dopadlo('x') == 'Vyhrál jsi. Gratulujeme.'
+
+def test_jak_to_dopadlo_remiza():
+    assert jak_to_dopadlo('!') == 'Remíza.'
+
+def test_jak_to_dopadlo_kolecka():
+    assert jak_to_dopadlo('o') == 'Vyhrál počítač.'
