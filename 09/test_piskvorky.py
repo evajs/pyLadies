@@ -18,13 +18,16 @@ def test_vyhnoceni_nekonec():
     assert vyhodnot('xx------oo-x-oo-----') == '-'
 
 def test_tah_pocitace_kolecko():
-    assert tah_pocitace('xx------o--x-oo-----').count('o') == 4;
+    assert tah_pocitace('xx------o--x-oo-----', 'o').count('o') == 4;
+
+def test_tah_pocitace_krizek():
+    assert tah_pocitace('xx------o--x-oo-----', 'x').count('x') == 4;
 
 def test_tah_pocitace_ubylo_pradnych():
-    assert tah_pocitace('xx------o--x-oo-----').count('-') == 13;
+    assert tah_pocitace('xx------o--x-oo-----', 'o').count('-') == 13;
 
 def test_tah_pocitace_najde_prazdne():
-    assert tah_pocitace('xxooxxooxxoxxooxxo-x') == 'xxooxxooxxoxxooxxoox'
+    assert tah_pocitace('xxooxxooxxoxxooxxo-x', 'o') == 'xxooxxooxxoxxooxxoox'
 
 def test_tah_krizek():
     assert tah('xx------o--x-oo-----', 2, 'x') == 'xxx-----o--x-oo-----'
@@ -49,3 +52,22 @@ def test_jak_to_dopadlo_remiza():
 
 def test_jak_to_dopadlo_kolecka():
     assert jak_to_dopadlo('o') == 'Vyhrál počítač.'
+
+def test_tah_pocitace_jina_delka():
+    assert tah_pocitace('xx-------oo-----x-x-o-o----xx', 'o').count('o') == 5
+
+def test_tah_pocitace_prazdne_pole():
+    try:
+        tah_pocitace('','x')
+    except Exception:
+        pass
+    else:
+        assert False
+
+def test_tah_pocitace_plne_pole():
+    try:
+        tah_pocitace('xoxoooxoxo','x')
+    except Exception:
+        pass
+    else:
+        assert False

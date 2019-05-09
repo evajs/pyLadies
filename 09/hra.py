@@ -38,7 +38,7 @@ def piskvorky1d():
             print(pole)
             hraje =2
         else:
-            pole = piskvorky.ai.tah_pocitace(pole)
+            pole = piskvorky.ai.tah_pocitace(pole,'o')
             print(pole)
             hraje =1
         stav_hry = piskvorky.vyhodnot(pole)
