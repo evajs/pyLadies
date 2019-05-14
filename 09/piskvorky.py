@@ -1,4 +1,4 @@
-import ai
+import ai_eva_blazkova
 import util
 
 # def tah_hrace(pole):

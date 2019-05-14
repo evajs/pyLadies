@@ -1,5 +1,5 @@
 from random import randrange
-import util
+from util import tah
 
 
 def nejdelsi_volny_prostor(pole):
@@ -68,7 +68,7 @@ def tah_pocitace(pole, symbol):
         cislo_policka = pole.index( '-' + symbol_protihrace + '--') + 2
     elif '-' + symbol_protihrace + '-' + symbol_protihrace in pole:
         cislo_policka = pole.index('-' + symbol_protihrace + '-' + symbol_protihrace)
-    elif  '--' + symbol_protihrace + '-' in pole:
+    elif '--' + symbol_protihrace + '-' in pole:
         cislo_policka = pole.index('--' + symbol_protihrace + '-') + 1
     # ja mam jednu
     elif symbol_protihrace + '-' + symbol + '-' + symbol_protihrace in pole:
@@ -85,8 +85,6 @@ def tah_pocitace(pole, symbol):
     else:
         volno = nejdelsi_volny_prostor(pole)
         cislo_policka = randrange(volno[0],volno[0]+ volno[1])
-        while pole[cislo_policka]!='-':
-            cislo_policka = randrange(volno[0],volno[0]+ volno[1])
-    return  util.tah(pole,cislo_policka,symbol)
+    return  tah(pole,cislo_policka,symbol)
 
 
